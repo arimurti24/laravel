@@ -21,5 +21,9 @@ Route::get('/', function () {
 
 
 
-Route::get('/create-transaction', [TransactionController::class, 'createTransaction']);
+
 Route::post('/payment-callback', [TransactionController::class, 'paymentCallback']);
+Route::get('/transactions', function () {
+    return view('transaction.index');
+});
+Route::get('/sendMessage', [TransactionController::class, 'sendMessage']);

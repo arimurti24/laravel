@@ -11,11 +11,11 @@ class Transaction extends Model
     protected $table = 'transaction';
 
     protected $fillable = [
-        'code', 'date',
+        'code', 'date','payment_method','payment_type','status'
     ];
 
-    public function detailTransaction()
+    public function DetailTransaction()
     {
-        return $this->hasMany(detailTransaction::class);
+        return $this->hasMany(DetailTransaction::class,'id','id_transaction');
     }
 }

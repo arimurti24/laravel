@@ -24,4 +24,7 @@ Route::resource('employee',EmployeeController::class);
 Route::resource('transaction',TransactionController::class);
 Route::resource('product',ProductController::class);
 Route::get('productCategory', [ProductController::class, 'getCategory']);
-Route::post('/createTransaction', [TransactionController::class, 'createTransaction']);
+Route::post('/create-transaction', [TransactionController::class, 'createTransaction']);
+Route::post('/get-payment', [TransactionController::class, 'getPayment']);
+Route::get('/get-transaction/{id}', [TransactionController::class, 'getTransaction']);
+Route::get('/get-detail-transaction/{id}', [TransactionController::class, 'getDetailTransaction']);
